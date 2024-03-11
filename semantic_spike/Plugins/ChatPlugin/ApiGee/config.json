@@ -1,0 +1,22 @@
+{
+    "schema": 1,
+    "description": "Have a conversation with a chatbot that tells jokes. The chatbot will ask for a hint about the desired joke style and then tell a joke based on the hint. The chatbot will also ask for user input to continue the conversation.",
+    "execution_settings": {
+      "apigee-chat-bison": {
+     
+      }
+    },
+    "input_variables": [
+      {
+        "name": "user_input",
+        "description": "User input",
+        "default": ""
+      },
+      {
+        "name": "history",
+        "description": "chat history",
+        "default": ""
+      }
+    ]
+}
+  
