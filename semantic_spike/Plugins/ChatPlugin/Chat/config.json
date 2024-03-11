@@ -1,0 +1,26 @@
+{
+    "schema": 1,
+    "description": "Have a conversation with a chatbot that tells jokes. The chatbot will ask for a hint about the desired joke style and then tell a joke based on the hint. The chatbot will also ask for user input to continue the conversation.",
+    "execution_settings": {
+      "azure-chat-gpt-35": {
+        "max_tokens": 1000,
+        "temperature": 0.9,
+        "top_p": 0.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0
+      }
+    },
+    "input_variables": [
+      {
+        "name": "user_input",
+        "description": "User input",
+        "default": ""
+      },
+      {
+        "name": "history",
+        "description": "chat history",
+        "default": ""
+      }
+    ]
+}
+  
