@@ -1,0 +1,39 @@
+{
+    "name": "poetry3-poetry-pyenv",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+    // "features": {},
+    // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // 👇 Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "",
+    // 👇 Configure tool-specific properties.
+    "mounts": [
+        // Keep command history
+        "type=volume,source=tre-bashhistory,target=/home/vscode/commandhistory",
+        // // Mounts the login details from the host machine to azcli works in the container
+        "type=bind,source=${env:HOME}${env:USERPROFILE}/.azure,target=/home/vscode/.azure",
+        // Mount docker socket for docker builds
+        "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock",
+        // Mounts the github cli login details from the host machine to the container (~/.config/gh/hosts.yml)
+        "type=bind,source=${env:HOME}${env:USERPROFILE}/.config,target=/home/vscode/.config"
+    ],
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-british-english",
+                "yzhang.markdown-all-in-one",
+                "ms-python.python",
+                "njpwerner.autodocstring"
+            ]
+        }
+    }
+}
