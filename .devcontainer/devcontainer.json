@@ -4,9 +4,8 @@
         "dockerfile": "Dockerfile"
     },
 
-
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "workspaceFolder": "/workspace"
+    "workspaceFolder": "/workspace",
     // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
     // "features": {},
     // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -22,7 +21,7 @@
         // Mount docker socket for docker builds
         "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock",
         // Mounts the github cli login details from the host machine to the container (~/.config/gh/hosts.yml)
-        "type=bind,source=${env:HOME}${env:USERPROFILE}/.config,target=/home/vscode/.config",
+        "type=bind,source=${env:HOME}${env:USERPROFILE}/.config,target=/home/vscode/.config"
     ],
     "customizations": {
         // Configure properties specific to VS Code.
