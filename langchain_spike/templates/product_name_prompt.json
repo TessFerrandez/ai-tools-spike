@@ -1,0 +1,15 @@
+{
+    "name": null,
+    "input_variables": [
+        "product"
+    ],
+    "input_types": {},
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "What is a good name for a company that makes {product}?",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
